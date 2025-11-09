@@ -1,10 +1,3 @@
-"""
-Example: run basic SLAM with YOLO detections on a DJI Tello drone.
-
-Usage
------
-python examples/slam_yolo_demo.py --model yolov8n.pt --display
-"""
 
 import argparse
 import sys
