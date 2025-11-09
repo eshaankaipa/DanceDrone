@@ -24,6 +24,7 @@ setuptools.setup(
         'numpy',
         'opencv-python',
         'ultralytics>=8.0.0',
+        'librosa>=0.10.0',
     ],
     python_requires='>=3.6',
     classifiers=[

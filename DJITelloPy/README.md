@@ -62,6 +62,23 @@ Comments in the examples are mostly in both english and chinese.
 - [fully featured manual control using pygame](examples/manual-control-pygame.py)
 - [basic SLAM with YOLO](examples/slam_yolo_demo.py)
 - [vision-based obstacle avoidance helper](#vision-based-obstacle-avoidance)
+- [music-driven choreography](#music-driven-choreography)
 
 ### Notes
 - If you are using the `
+```
+The helper relies on the `ultralytics` package for YOLO inference and uses conservative fallback heuristics when precise calibration data is unavailable.
+
+### Music-driven choreography
+The `MusicChoreographer` leverages `librosa` to analyse an audio file, detect beats, and convert them into Tello commands. It can preview the planned choreography or stream commands directly to the drone with latency compensation. Example:
+
+```python
+from djitellopy import MusicChoreographer, Tello
+
+choreo = MusicChoreographer(Tello(), audio_path="/path/to/song.mp3")
+choreo.detect_beats()
+choreo.build_schedule()
+choreo.play_schedule()
+```
+
+Run `examples/music_choreo_demo.py` to try a full command-line demo.
